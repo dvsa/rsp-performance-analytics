@@ -1,1 +1,1 @@
-# rsp-performance-analytics
+This is a repo of scripts written in R to create data that feed our GDS dashboard.

@@ -37,6 +37,7 @@ template <- data_to_wide_format %>%
          rating_5 = `Very satisfied`) %>%
   mutate(total = rating_1 + rating_2 + rating_3 + rating_4 + rating_5,
          `_timestamp` = as.character(as.Date(paste0(year_week, "-1"), "%Y-%W-%w")),
+         `_timestamp` = paste0(`_timestamp`, "T00:00:00"),
          period = matrix("week", nrow = 1, ncol = 1), 
          service = matrix("roadside-payments", nrow = 1, ncol = 1)) %>%
   select(8, 9, 10, 5, 2, 3, 4, 6, 7)

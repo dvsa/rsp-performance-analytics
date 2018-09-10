@@ -24,7 +24,7 @@ x <- do.call(rbind, lapply(unique(data$received), function(d)
 
 data <- data[,c(1, 3, 4, 5, 2, 6, 7)]
 
-data2 <- data %>% mutate(timestamp = paste0(x$start_at, "T00:00:00+00:00"),
+data2 <- data %>% mutate(`_timestamp` = paste0(x$start_at, "T00:00:00+00:00"),
                          start_at = paste0(x$start_at, "T00:00:00+00:00"),
                          end_at = paste0(x$end_at, "T00:00:00+00:00")) 
 

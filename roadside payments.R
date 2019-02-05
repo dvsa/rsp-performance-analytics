@@ -1,18 +1,16 @@
-#############################################
-##User satisfaction score from Smart Survey##
-#############################################
+###########################
+##User satisfaction score##
+###########################
 
 ## Necessary packages to run script
 library(data.table)
-library(dplyr)
-library(ggplot2)
-library(tidyr)
+library(tidyverse)
 library(WriteXLS)
 
 ## Reads dummy data
-data <- fread("/Users/argryioschristakopoulos/Desktop/roadside_payment_scripts/dummy_data.csv", 
+data <- fread("~/DVSA/RSP-Analytics/data/764583.csv", 
               select = c(7, 9:13),
-              skip = 2L,
+              skip = 3L,
               col.names = c("started", 
                             "task", 
                             "easy",

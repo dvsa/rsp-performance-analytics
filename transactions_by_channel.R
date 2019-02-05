@@ -19,10 +19,10 @@ data2 <- data %>%
   gather(channel, count,-received) %>%
   arrange(received) %>%
   mutate(timestamp = paste0(received, "-01"),
-         timestamp = paste0(timestamp, "T00:00:00+00:00"),
+         `_timestamp` = paste0(timestamp, "T00:00:00+00:00"),
          service = matrix("vehicle_operator_service", ncol = 1, nrow =1),
          period = matrix("month", ncol = 1, nrow =1)) %>%
-  select(timestamp, service, period, channel, count)
+  select(`_timestamp`, service, period, channel, count)
 
 
 WriteXLS(data2, "transactions-by-channel.xlsx", col.names = TRUE, SheetNames = "Sheet1")
